@@ -158,9 +158,6 @@ Character.prototype.drawCharacter = function(context,map) {
         this.x, this.z - this.y, // Point de destination (dépend de la taille du personnage)
         this.width, this.height // Taille du rectangle destination (c'est la taille du personnage)
     );
-
-
-    console.log(this.x - this.y + "," + this.z);
 }
 
 
