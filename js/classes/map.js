@@ -19,11 +19,11 @@ Map.prototype.getWidth = function() {
 }
 
 Map.prototype.getPxHeight = function() {
-    return this.terrain[0].length * 32 / 2;
+    return this.terrain[0].length * 32 / 2 - 80;
 }
 
 Map.prototype.getPxWidth = function() {
-    return this.terrain[0][0].length * 64 / 2;
+    return this.terrain[0][0].length * 64 - 96;
 }
 
 Map.prototype.addCharacter = function(character) {

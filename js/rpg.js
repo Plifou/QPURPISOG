@@ -1,6 +1,6 @@
 var map = new Map("seconde");
 
-var player = new Character("actor.png", 0, 10, 0);
+var player = new Character("actor.png", 0, 8, 0);
 map.addCharacter(player);
 
 window.onload = function() {
