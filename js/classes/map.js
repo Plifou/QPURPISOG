@@ -1,21 +1,21 @@
 function Map(names) {
-	var xmlHttpRequest = getXMLHttpRequest();
-	xmlHttpRequest.open("GET", './maps/' + names + '.json', false);
-	xmlHttpRequest.send(null);
-	if(xmlHttpRequest.readyState != 4 || (xmlHttpRequest.status != 200 && xmlHttpRequest.status != 0)) // Code == 0 local
-		throw new Error("Impossible to load map \"" + names + "\" ( HTTP code : " + xmlHttpRequest.status + ").");
-	var mapJsonData = xmlHttpRequest.responseText;
-	var mapData = JSON.parse(mapJsonData);
-	this.tileset = new Tileset(mapData.tileset);
-	this.terrain = mapData.terrain;
-	this.characters = new Array();
+    var xmlHttpRequest = getXMLHttpRequest();
+    xmlHttpRequest.open("GET", './maps/' + names + '.json', false);
+    xmlHttpRequest.send(null);
+    if(xmlHttpRequest.readyState != 4 || (xmlHttpRequest.status != 200 && xmlHttpRequest.status != 0)) // Code == 0 local
+        throw new Error("Impossible to load map \"" + names + "\" ( HTTP code : " + xmlHttpRequest.status + ").");
+    var mapJsonData = xmlHttpRequest.responseText;
+    var mapData = JSON.parse(mapJsonData);
+    this.tileset = new Tileset(mapData.tileset);
+    this.terrain = mapData.terrain;
+    this.characters = new Array();
 }
 
 Map.prototype.getHeight = function() {
-	return this.terrain[0].length;
+    return this.terrain[0].length;
 }
 Map.prototype.getWidth = function() {
-	return this.terrain[0][0].length;
+    return this.terrain[0][0].length;
 }
 
 Map.prototype.getPxHeight = function() {
@@ -27,7 +27,7 @@ Map.prototype.getPxWidth = function() {
 }
 
 Map.prototype.addCharacter = function(character) {
-	this.characters.push(character);
+    this.characters.push(character);
 }
 
 Map.prototype.drawMap = function (context) {
@@ -41,19 +41,14 @@ Map.prototype.drawMap = function (context) {
                 } else {
                     this.tileset.dessinerTile(line[currentNumColumn], context, currentNumColumn * 64, height);
                 }
+                for(var i = 0, l = this.characters.length ; i < l ; i++) {
+                    if((this.characters[i].getY()/32) >= currentFloorMap && (this.characters[i].getY()/32) < (currentFloorMap + 1)) {
+                            if((this.characters[i].getX()/64) >= currentNumColumn && (this.characters[i].getX()/64) < (currentNumColumn + 1)) {
+                                this.characters[i].drawCharacter(context, this);
+                            }
+                    }
+                }
             }
         }
     }
-	for(var i = 0, l = this.characters.length ; i < l ; i++) {
-		this.characters[i].drawCharacter(context,map);
-	}
 }
-
-
-
-
-
-
-
-
-
