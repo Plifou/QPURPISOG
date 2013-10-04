@@ -13,6 +13,11 @@ window.onload = function() {
     setInterval(function() {
         map.drawMap(ctx);
     }, 40);
+    setInterval(function() {
+    	if (player.direction != DIRECTION.NUL) {
+    		player.newCoord(map);
+    	}
+    }, 20);
 
     // Gestion du clavier
     window.onkeydown = function(event) {

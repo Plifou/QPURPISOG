@@ -30,6 +30,8 @@ function Character(url, x, y, z) {
         this.reference.height = this.height / 8;
     }
     this.image.src = "sprites/" + url;
+    
+ 
 }
 
 Character.prototype.getX = function() {
@@ -51,25 +53,25 @@ Character.prototype.newCoord = function(map) {
 
         case DIRECTION.U:
             if(this.z > 0) {
-                this.z -= 3;
+                this.z -= 4;
             }
             break;
 
         case DIRECTION.D:
             if(this.z < map.getPxHeight()) {
-                this.z += 3;
+                this.z += 4;
             }
             break;
 
         case DIRECTION.L:
             if(this.x > 0) {
-                this.x -= 3;
+                this.x -= 4;
             }
             break;
 
         case DIRECTION.R:
             if(this.x < map.getPxWidth()) {
-                this.x += 3;
+                this.x += 4;
             }
             break;
 
@@ -145,7 +147,7 @@ Character.prototype.drawCharacter = function(context,map) {
         else {
             this.currentFrame++;
         }
-        this.newCoord(map);
+       // this.newCoord(map);
         var directionToUse = this.direction;
     }
     else {
@@ -169,10 +171,10 @@ Character.prototype.keyDown = function(direction) {
     switch(direction) {
 
         case DIRECTION.U:
-            if(this.direction == DIRECTION.R) {
+            if(this.direction == DIRECTION.R || this.direction == DIRECTION.UR) {
                 this.direction = DIRECTION.UR;
             }
-            else if(this.direction == DIRECTION.L) {
+            else if(this.direction == DIRECTION.L || this.direction == DIRECTION.UL) {
                 this.direction = DIRECTION.UL;
             }
             else {
@@ -181,10 +183,10 @@ Character.prototype.keyDown = function(direction) {
             break;
 
         case DIRECTION.D:
-            if(this.direction == DIRECTION.R) {
+            if(this.direction == DIRECTION.R || this.direction == DIRECTION.DR) {
                 this.direction = DIRECTION.DR;
             }
-            else if(this.direction == DIRECTION.L) {
+            else if(this.direction == DIRECTION.L || this.direction == DIRECTION.DL) {
                 this.direction = DIRECTION.DL;
             }
             else {
@@ -193,10 +195,10 @@ Character.prototype.keyDown = function(direction) {
             break;
 
         case DIRECTION.L:
-            if(this.direction == DIRECTION.D) {
+            if(this.direction == DIRECTION.D || this.direction == DIRECTION.DL) {
                 this.direction = DIRECTION.DL;
             }
-            else if(this.direction == DIRECTION.U) {
+            else if(this.direction == DIRECTION.U || this.direction == DIRECTION.UL) {
                 this.direction = DIRECTION.UL;
             }
             else {
@@ -205,10 +207,10 @@ Character.prototype.keyDown = function(direction) {
             break;
 
         case DIRECTION.R:
-            if(this.direction == DIRECTION.U) {
+            if(this.direction == DIRECTION.U || this.direction == DIRECTION.UR) {
                 this.direction = DIRECTION.UR;
             }
-            else if(this.direction == DIRECTION.D) {
+            else if(this.direction == DIRECTION.D || this.direction == DIRECTION.DR) {
                 this.direction = DIRECTION.DR;
             }
             else {
