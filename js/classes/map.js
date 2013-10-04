@@ -12,10 +12,10 @@ function Map(names) {
 }
 
 Map.prototype.getHeight = function() {
-    return this.terrain[0].length;
+	return this.terrain[0].length;
 }
 Map.prototype.getWidth = function() {
-    return this.terrain[0][0].length;
+	return this.terrain[0][0].length;
 }
 
 Map.prototype.getPxHeight = function() {
@@ -41,25 +41,13 @@ Map.prototype.drawMap = function (context) {
                 } else {
                     this.tileset.dessinerTile(line[currentNumColumn], context, currentNumColumn * 64, height);
                 }
-                /*for(var i = 0, l = this.characters.length ; i < l ; i++) {
-                    if(this.characters[i].getHeight()/ 32 >= currentFloorMap && this.characters[i].getHeight()/32 < currentFloorMap + 1){
-                        if(this.characters[i].get/64 >= currentNumLine && this.characters[i].get/64 < currentNumLine + 1) {
-                            if(this.characters[i].get/32 >= currentNumColumn && this.characters[i].get/32 < currentNumColumn + 1) {
-                                this.characters[i].dessinerPersonnage(context);
-                            }
-                        }
-                    }
-                }*/
             }
         }
     }
+	for(var i = 0, l = this.characters.length ; i < l ; i++) {
+		this.characters[i].drawCharacter(context,map);
+	}
 }
-
-
-
-
-
-
 
 
 
