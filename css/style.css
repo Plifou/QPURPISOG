@@ -1,0 +1,86 @@
+#Title{
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+    color: orange;
+    width: 1012px;
+    height: 60px;
+    background-color: #444;
+    border-left: groove 3px orange;
+    border-right: groove 3px orange;
+    border-bottom: groove 3px orange;
+    border-radius: 0px 0px 6px 6px;
+}
+body{
+    width: 1024px;
+    margin: auto;
+    margin-top: -20px;
+    background-color: #111;
+    padding-left: 6px;
+    border-left: groove 3px orange;
+    padding-right: 6px;
+    border-right: groove 3px orange;
+    padding-bottom: 6px;
+    border-bottom: groove 3px orange;
+    border-radius: 0px 0px 6px 6px;
+}
+#Main_Nav{
+    color: orange;
+    background-color: #444;
+    border-left: groove 3px orange;
+    border-right: groove 3px orange;
+    border-bottom: groove 3px orange;
+    border-radius: 0px 0px 6px 6px;
+    width: 756px;
+    margin: auto;
+    text-align: center;
+}
+.Lien_Nav{
+    color: orange;
+    text-decoration: none;
+    padding: 3px;
+}
+.Lien_Nav:hover{
+    color: orangered;
+    text-decoration: none;
+    padding: 3px;
+}
+.Item_Nav{
+    display: inline;
+    padding-bottom: 3px;
+}
+#Ul_Nav{
+    list-style-type:none;
+    margin: 0px;
+    padding: 2px;
+}
+html{
+    background-color: black;
+}
+p{
+    color: orange;
+    margin: auto;
+}
+form{
+    margin: auto;
+    text-align: center;
+    color: orange;
+    width: 256px;
+}
+legend{
+    text-align: left;
+}
+input{
+    float: right;
+    margin-right: 20px;
+}
+label{
+    float: left;
+}
+canvas{
+    display: block;
+    margin: auto;
+    margin-top: 6px;
+    border: groove 3px orange;
+    border-radius: 6px;
+}
