@@ -51,85 +51,85 @@ Character.prototype.newCoord = function(map) {
 
         case DIRECTION.U:
             if(this.z > 0) {
-                this.z -= 1;
+                this.z -= 3;
             }
             break;
 
         case DIRECTION.D:
             if(this.z < map.getPxHeight()) {
-                this.z += 1;
+                this.z += 3;
             }
             break;
 
         case DIRECTION.L:
             if(this.x > 0) {
-                this.x -= 1;
+                this.x -= 3;
             }
             break;
 
         case DIRECTION.R:
             if(this.x < map.getPxWidth()) {
-                this.x += 1;
+                this.x += 3;
             }
             break;
 
         case DIRECTION.UR:
             if(this.z > 0) {
                 if (this.x < map.getPxWidth()) {
-                    this.x += 1;
-                    this.z -= 1;
+                    this.x += 3;
+                    this.z -= 3;
                 }
                 else {
-                    this.z -= 1;
+                    this.z -= 3;
                 }
             }
             else if (this.x < map.getPxWidth()) {
-                this.x += 1;
+                this.x += 3;
             }
             break;
 
         case DIRECTION.UL:
             if(this.z > 0) {
                 if (this.x > 0) {
-                    this.x -= 1;
-                    this.z -= 1;
+                    this.x -= 3;
+                    this.z -= 3;
                 }
                 else {
-                    this.z -= 1;
+                    this.z -= 3;
                 }
             }
             else if (this.x > 0) {
-                this.x -= 1;
+                this.x -= 3;
             }
             break;
 
         case DIRECTION.DR:
             if(this.z < map.getPxHeight()) {
                 if (this.x < map.getPxWidth()) {
-                    this.x += 1;
-                    this.z += 1;
+                    this.x += 3;
+                    this.z += 3;
                 }
                 else {
-                    this.z += 1;
+                    this.z += 3;
                 }
             }
             else if (this.x < map.getPxWidth()) {
-                this.x += 1;
+                this.x += 3;
             }
             break;
 
         case DIRECTION.DL:
             if(this.z < map.getPxHeight()) {
                 if (this.x > 0) {
-                    this.x -= 1;
-                    this.z += 1;
+                    this.x -= 3;
+                    this.z += 3;
                 }
                 else {
-                    this.z += 1;
+                    this.z += 3;
                 }
             }
             else if (this.x >0) {
-                this.x -= 1;
+                this.x -= 3;
             }
             break;
     }
@@ -139,7 +139,7 @@ Character.prototype.newCoord = function(map) {
 Character.prototype.drawCharacter = function(context,map) {
 
     if (this.direction != DIRECTION.NUL) {
-        if (this.currentFrame == 5) {
+        if (this.currentFrame == 17) {
             this.currentFrame = 0;
         }
         else {
@@ -153,7 +153,7 @@ Character.prototype.drawCharacter = function(context,map) {
     }
     context.drawImage(
         this.image,
-        this.width * this.currentFrame, directionToUse * this.height, // Point d'origine du rectangle source à prendre dans notre image
+        this.width * parseInt(this.currentFrame/3), directionToUse * this.height, // Point d'origine du rectangle source à prendre dans notre image
         this.width, this.height, // Taille du rectangle source (c'est la taille du personnage)
         this.x, this.z - this.y, // Point de destination (dépend de la taille du personnage)
         this.width, this.height // Taille du rectangle destination (c'est la taille du personnage)

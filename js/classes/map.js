@@ -29,7 +29,7 @@ Map.prototype.getPxWidth = function() {
 Map.prototype.addCharacter = function(character) {
     this.characters.push(character);
 }
-
+/*
 Map.prototype.drawMap = function (context) {
     for(var currentFloorMap = 0, floorMap = this.terrain.length; currentFloorMap < floorMap; currentFloorMap++) {
         for(var currentNumLine = 0, numLine = this.terrain[currentFloorMap].length; currentNumLine < numLine; currentNumLine++) {
@@ -48,6 +48,26 @@ Map.prototype.drawMap = function (context) {
                             }
                     }
                 }
+            }
+        }
+    }
+}*/
+Map.prototype.drawMap = function (context) {
+    for(var currentFloorMap = 0, floorMap = this.terrain.length; currentFloorMap < floorMap; currentFloorMap++) {
+        for(var currentNumLine = 0, numLine = this.terrain[currentFloorMap].length; currentNumLine < numLine; currentNumLine++) {
+            var line = this.terrain[currentFloorMap][currentNumLine];
+            var height = currentNumLine * 16 - 48 - (currentFloorMap * 32);
+            for(var currentNumColumn = 0, numColumn = line.length; currentNumColumn < numColumn; currentNumColumn++) {
+                if(currentNumLine % 2 == 0) {
+                    this.tileset.dessinerTile(line[currentNumColumn], context, currentNumColumn * 64 - 32, height);
+                } else {
+                    this.tileset.dessinerTile(line[currentNumColumn], context, currentNumColumn * 64, height);
+                }
+            }
+        }
+        for(var i = 0, l = this.characters.length ; i < l ; i++) {
+            if((this.characters[i].getY()/32) >= currentFloorMap && (this.characters[i].getY()/32) < (currentFloorMap + 1)) {
+                    this.characters[i].drawCharacter(context, this);
             }
         }
     }

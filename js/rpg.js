@@ -19,15 +19,15 @@ window.onload = function() {
         // On récupère le code de la touche
         var e = event || window.event;
         var key = e.which || e.keyCode;
-
+        
         switch(key) {
-            case 38 : case 122 : case 119 : case 90 : case 87 :
+            case 38 : case 122 : case 90 :
             player.keyDown(DIRECTION.U);
             break;
             case 40 : case 115 : case 83 :
             player.keyDown(DIRECTION.D);
             break;
-            case 37 : case 113 : case 97 : case 81 : case 65 :
+            case 37 : case 113 : case 81 :
             player.keyDown(DIRECTION.L);
             break;
             case 39 : case 100 : case 68 :
@@ -46,13 +46,13 @@ window.onload = function() {
         var key = e.which || e.keyCode;
 
         switch(key) {
-            case 38 : case 122 : case 119 : case 90 : case 87 :
+            case 38 : case 122 : case 90 :
             player.keyUp(DIRECTION.U);
             break;
             case 40 : case 115 : case 83 :
             player.keyUp(DIRECTION.D);
             break;
-            case 37 : case 113 : case 97 : case 81 : case 65 :
+            case 37 : case 113 : case 81 :
             player.keyUp(DIRECTION.L);
             break;
             case 39 : case 100 : case 68 :
