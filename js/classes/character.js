@@ -30,8 +30,8 @@ function Character(url, x, y, z) {
         this.reference.height = this.height / 8;
     }
     this.image.src = "sprites/" + url;
-    
- 
+
+
 }
 
 Character.prototype.getX = function() {
@@ -78,60 +78,60 @@ Character.prototype.newCoord = function(map) {
         case DIRECTION.UR:
             if(this.z > 0) {
                 if (this.x < map.getPxWidth()) {
-                    this.x += 3;
-                    this.z -= 3;
+                    this.x += 4;
+                    this.z -= 2;
                 }
                 else {
-                    this.z -= 3;
+                    this.z -= 2;
                 }
             }
             else if (this.x < map.getPxWidth()) {
-                this.x += 3;
+                this.x += 4;
             }
             break;
 
         case DIRECTION.UL:
             if(this.z > 0) {
                 if (this.x > 0) {
-                    this.x -= 3;
-                    this.z -= 3;
+                    this.x -= 4;
+                    this.z -= 2;
                 }
                 else {
-                    this.z -= 3;
+                    this.z -= 2;
                 }
             }
             else if (this.x > 0) {
-                this.x -= 3;
+                this.x -= 4;
             }
             break;
 
         case DIRECTION.DR:
             if(this.z < map.getPxHeight()) {
                 if (this.x < map.getPxWidth()) {
-                    this.x += 3;
-                    this.z += 3;
+                    this.x += 4;
+                    this.z += 2;
                 }
                 else {
-                    this.z += 3;
+                    this.z += 2;
                 }
             }
             else if (this.x < map.getPxWidth()) {
-                this.x += 3;
+                this.x += 4;
             }
             break;
 
         case DIRECTION.DL:
             if(this.z < map.getPxHeight()) {
                 if (this.x > 0) {
-                    this.x -= 3;
-                    this.z += 3;
+                    this.x -= 4;
+                    this.z += 2;
                 }
                 else {
-                    this.z += 3;
+                    this.z += 2;
                 }
             }
             else if (this.x >0) {
-                this.x -= 3;
+                this.x -= 4;
             }
             break;
     }
@@ -147,7 +147,7 @@ Character.prototype.drawCharacter = function(context,map) {
         else {
             this.currentFrame++;
         }
-       // this.newCoord(map);
+        // this.newCoord(map);
         var directionToUse = this.direction;
     }
     else {
