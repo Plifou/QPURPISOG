@@ -9,7 +9,10 @@ if(isset($_POST['pseudo'])) {
             $pass = $_POST['pass'];
             $Vpass = $_POST['Vpass'];
             if($pass == $Vpass and strlen($pass) >= 8) {
-                $ValideInfo = true;
+                if(isset($_POST['mail'])) {
+                    $email = $_POST['mail'];
+                    $ValideInfo = true;
+                }
             }
         }
     }
@@ -18,19 +21,21 @@ if(isset($_POST['pseudo'])) {
 if($ValideInfo) {
     // Hachage du mot de passe
     $pass_hache = sha1($_POST['pass']);
-    $pass_hache = $pass_hache +"PQU";
+    $pass_hache = $pass_hache.'PQU';
     $pass_hache = sha1($pass_hache);
 
-    echo $pass_hache;
+    $mysqli = new mysqli("sql.olympe.in", "6VyepLds", "159875321az", "6VyepLds");
+
+    // Insertion
+    $query = "INSERT INTO membres VALUES ('$pseudo', '$pass_hache', '$email', CURDATE())";
+    if (!mysqli_query($mysqli,$query))
+    {
+        die('Error: ' . mysqli_error($mysqli));
+    }
+    $mysqli->close();
 } else {
 
 }
 
-/*// Insertion
-$req = $bdd->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(:pseudo, :pass, :email, CURDATE())');
-$req->execute(array(
-    'pseudo' => $pseudo,
-    'pass' => $pass_hache,
-    'email' => $email));*/
 
 ?>

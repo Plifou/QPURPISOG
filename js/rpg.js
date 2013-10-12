@@ -12,7 +12,8 @@ window.onload = function() {
 
     setInterval(function() {
         map.drawMap(ctx);
-    }, 40);
+    }, 1);
+
     setInterval(function() {
     	if (player.direction != DIRECTION.NUL) {
     		player.newCoord(map);
