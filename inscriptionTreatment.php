@@ -8,10 +8,12 @@ if(isset($_POST['pseudo'])) {
         if(isset($_POST['pass']) && isset($_POST['Vpass'])) {
             $pass = $_POST['pass'];
             $Vpass = $_POST['Vpass'];
-            if($pass == $Vpass and strlen($pass) >= 8) {
-                if(isset($_POST['mail'])) {
-                    $email = $_POST['mail'];
-                    $ValideInfo = true;
+            if($pass == $Vpass) {
+                if(strlen($pass) >= 8) {
+                    if(isset($_POST['mail'])) {
+                        $email = $_POST['mail'];
+                        $ValideInfo = true;
+                    }
                 }
             }
         }
@@ -27,14 +29,15 @@ if($ValideInfo) {
     $mysqli = new mysqli("sql.olympe.in", "6VyepLds", "159875321az", "6VyepLds");
 
     // Insertion
-    $query = "INSERT INTO membres VALUES ('$pseudo', '$pass_hache', '$email', CURDATE())";
+    $query = "INSERT INTO membres VALUES ('', '$pseudo', '$pass_hache', '$email', CURDATE())";
     if (!mysqli_query($mysqli,$query))
     {
         die('Error: ' . mysqli_error($mysqli));
     }
     $mysqli->close();
+    header('Location: game.php');
 } else {
-
+    header('Location: inscription.php');
 }
 
 
