@@ -10,7 +10,7 @@ var DIRECTION = {
     "NUL"	: -1
 };
 
-function Character(url, x, y, z) {
+function Character(url, x, y, z, pseudo) {
     this.x = x; // (in px)//largeur
     this.y = y; // (in px)//hauteur
     this.z = z; // (in px)//profondeur
@@ -30,8 +30,7 @@ function Character(url, x, y, z) {
         this.reference.height = this.height / 8;
     }
     this.image.src = "sprites/" + url;
-
-
+    this.pseudo = pseudo;
 }
 
 Character.prototype.getX = function() {
