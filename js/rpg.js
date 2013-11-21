@@ -1,8 +1,9 @@
-var pseudo = window.prompt("How do you want to name you character ?");
+var pseudo = getCookie('pseudoISOGAME');
 if (pseudo == undefined) {
     pseudo = "FunckinNooby"
 }
-;
+
+document.write('myCookie a pour valeur : ' + getCookie('pseudoISOGAME'))
 
 var map = new Map("seconde");
 

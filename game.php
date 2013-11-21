@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/oXHR.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/classes/character.js"></script>
     <script type="text/javascript" src="js/classes/tileset.js"></script>
     <script type="text/javascript" src="js/classes/map.js"></script>
