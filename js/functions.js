@@ -1,0 +1,31 @@
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function getCookie(name){
+    if(document.cookie.length == 0)
+        return null;
+
+    var regSepCookie = new RegExp('(; )', 'g');
+    var cookies = document.cookie.split(regSepCookie);
+
+    for(var i = 0; i < cookies.length; i++){
+        var regInfo = new RegExp('=', 'g');
+        var infos = cookies[i].split(regInfo);
+        if(infos[0] == name){
+            return decodeURIComponent(infos[1]);
+        }
+    }
+    return null;
+}
+
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}

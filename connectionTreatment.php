@@ -23,6 +23,7 @@ if (!$resultat) {
 } else {
     $_SESSION['id'] = $resultat['id'];
     $_SESSION['pseudo'] = $pseudo;
+    setcookie('pseudoISOGAME', $pseudo , time() + 365*24*3600);
     header('Location: index.php');
 }
 ?>

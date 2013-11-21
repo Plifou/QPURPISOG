@@ -2,46 +2,46 @@
     font-size: 50px;
     text-align: center;
     margin: auto;
-    color: orange;
+    color: darkred;
     width: 1012px;
     height: 60px;
-    background-color: #444;
-    border-left: groove 3px orange;
-    border-right: groove 3px orange;
-    border-bottom: groove 3px orange;
+    background-color: #AAA;
+    border-left: groove 3px darkred;
+    border-right: groove 3px darkred;
+    border-bottom: groove 3px darkred;
     border-radius: 0px 0px 6px 6px;
 }
 body{
-    width: 1024px;
+    width: 95%;
     margin: auto;
     margin-top: -20px;
-    background-color: #111;
+    background-color: #AAA;
     padding-left: 6px;
-    border-left: groove 3px orange;
+    border-left: groove 3px darkred;
     padding-right: 6px;
-    border-right: groove 3px orange;
+    border-right: groove 3px darkred;
     padding-bottom: 6px;
-    border-bottom: groove 3px orange;
+    border-bottom: groove 3px darkred;
     border-radius: 0px 0px 6px 6px;
 }
 #Main_Nav{
-    color: orange;
-    background-color: #444;
-    border-left: groove 3px orange;
-    border-right: groove 3px orange;
-    border-bottom: groove 3px orange;
+    color: darkred;
+    background-color: #AAA;
+    border-left: groove 3px darkred;
+    border-right: groove 3px darkred;
+    border-bottom: groove 3px darkred;
     border-radius: 0px 0px 6px 6px;
     width: 756px;
     margin: auto;
     text-align: center;
 }
 .Lien_Nav{
-    color: orange;
+    color: darkred;
     text-decoration: none;
     padding: 3px;
 }
 .Lien_Nav:hover{
-    color: orangered;
+    color: brown;
     text-decoration: none;
     padding: 3px;
 }
@@ -55,16 +55,16 @@ body{
     padding: 2px;
 }
 html{
-    background-color: black;
+    background-color: #AAA;
 }
 p{
-    color: orange;
+    color: darkred;
     margin: auto;
 }
 form{
     margin: auto;
     text-align: center;
-    color: orange;
+    color: darkred;
     width: 256px;
 }
 legend{
@@ -81,6 +81,9 @@ canvas{
     display: block;
     margin: auto;
     margin-top: 6px;
-    border: groove 3px orange;
+    border: groove 3px darkred;
     border-radius: 6px;
+}
+#chat{
+    float: left;
 }
